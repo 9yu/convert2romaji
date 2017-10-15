@@ -1,0 +1,22 @@
+{
+	"name": "9yu/Convert2Romaji",
+	"type": "library",
+	"description": "Easy way to convert Japanese to Roumaji",
+	"homepage": "https://github.com/9yu/Convert2Romaji",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "9yu",
+			"email": "9@9yu.eu",
+			"homepage": "https://9yu.eu"
+		}
+	],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"Yubako2\\": "src/"
+    	}
+    }
+}
