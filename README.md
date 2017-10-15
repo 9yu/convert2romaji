@@ -1,5 +1,5 @@
 ## Install
-```
+```php
 composer require 9yu/convert2romaji
 ```
 ## Usage
