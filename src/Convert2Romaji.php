@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace Yubako2;
 
 const YAHOO_API_KEY = 'dj00aiZpPWt3YlpOTk9kZEhvcSZzPWNvbnN1bWVyc2VjcmV0Jng9YjI-';
 const YAHOO_FURIGANA = 'https://jlp.yahooapis.jp/FuriganaService/V1/furigana';

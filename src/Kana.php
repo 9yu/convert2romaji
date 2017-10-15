@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace Yubako2;
 
 /**
  * Class Kana
