@@ -15,7 +15,7 @@ class ComposerStaticInit95eba51ace56c9358a7bbdc117d21627
     public static $prefixLengthsPsr4 = array (
         'Y' => 
         array (
-            'Yubako2\\' => 8,
+            'Yubako2\\Convert2Romaji\\' => 23,
         ),
         'P' => 
         array (
@@ -30,7 +30,7 @@ class ComposerStaticInit95eba51ace56c9358a7bbdc117d21627
     );
 
     public static $prefixDirsPsr4 = array (
-        'Yubako2\\' => 
+        'Yubako2\\Convert2Romaji\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

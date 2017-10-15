@@ -1,12 +1,12 @@
 <?php
-namespace Yubako2;
+namespace Yubako2\Convert2Romaji;
 
 const YAHOO_API_KEY = 'dj00aiZpPWt3YlpOTk9kZEhvcSZzPWNvbnN1bWVyc2VjcmV0Jng9YjI-';
 const YAHOO_FURIGANA = 'https://jlp.yahooapis.jp/FuriganaService/V1/furigana';
 
 use GuzzleHttp\Exception\RequestException;
 
-class Convert2Romaji
+class Convertor
 {
     public static function convert($text)
     {
@@ -46,7 +46,7 @@ class Convert2Romaji
     {
         $roman = '';
         foreach ($array['Result']['WordList']['Word'] as $item) {
-            $roman .= isset($item['Roman']) ? $item['Roman'] : \Yubako2\Kana::from_kana($item['Surface']);
+            $roman .= isset($item['Roman']) ? $item['Roman'] : \Yubako2\Convert2Romaji\Kana::from_kana($item['Surface']);
         }
         return $roman;
     }

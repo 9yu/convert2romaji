@@ -16,7 +16,7 @@
     },
     "autoload": {
     	"psr-4": {
-    		"Yubako2\\": "src/"
+    		"Yubako2\\Convert2Romaji\\": "src/"
     	}
     }
 }

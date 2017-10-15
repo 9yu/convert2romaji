@@ -1,5 +1,5 @@
 <?php
-namespace Yubako2;
+namespace Yubako2\Convert2Romaji;
 
 /**
  * Class Kana
