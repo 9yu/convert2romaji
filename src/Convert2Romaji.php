@@ -4,6 +4,8 @@ namespace Yubako2;
 const YAHOO_API_KEY = 'dj00aiZpPWt3YlpOTk9kZEhvcSZzPWNvbnN1bWVyc2VjcmV0Jng9YjI-';
 const YAHOO_FURIGANA = 'https://jlp.yahooapis.jp/FuriganaService/V1/furigana';
 
+use GuzzleHttp\Exception\RequestException;
+
 class Convert2Romaji
 {
     public static function convert($text)
@@ -15,7 +17,15 @@ class Convert2Romaji
         // api
         $url = YAHOO_FURIGANA . '?appid=' .  YAHOO_API_KEY . '&grade=1&sentence=' . $text;
         $client = new \GuzzleHttp\Client();
-        $res = $client->request('GET', $url);
+        try {
+            $res = $client->request('GET', $url);
+            // error catcher
+        } catch (RequestException $e) {
+            trigger_error('String is not valid Japanese',E_USER_WARNING);
+            return null;
+        }
+
+        // getbody
         $xml = $res->getBody();
 
         // convert to json
@@ -25,12 +35,19 @@ class Convert2Romaji
         // convert to object
         $array = json_decode($json, true);
 
-        // foreach
+        // print
+        if (isset($array['Result']['WordList']['Word']['Roman']))
+            return $array['Result']['WordList']['Word']['Roman'];
+        else
+            return self::each_item($array);
+    }
+
+    protected static function each_item($array)
+    {
         $roman = '';
         foreach ($array['Result']['WordList']['Word'] as $item) {
-            $roman .= isset($item['Roman']) ? $item['Roman'] : \App\Kana::from_kana($item['Surface']);
+            $roman .= isset($item['Roman']) ? $item['Roman'] : \Yubako2\Kana::from_kana($item['Surface']);
         }
-
         return $roman;
     }
 
