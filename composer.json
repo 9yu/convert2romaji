@@ -1,8 +1,8 @@
 {
-	"name": "9yu/Convert2Romaji",
+	"name": "9yu/convert2romaji",
 	"type": "library",
 	"description": "Easy way to convert Japanese to Romaji",
-	"homepage": "https://github.com/9yu/Convert2Romaji",
+	"homepage": "https://github.com/9yu/convert2romaji",
 	"license": "MIT",
 	"authors": [
 		{
